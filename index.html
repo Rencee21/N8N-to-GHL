@@ -57,7 +57,13 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;heigh
 .cta .btn{background:#fff;color:var(--brand)}
 footer{padding:22px;text-align:center;color:#6b7b84;font-size:14px}
 /* Suggested replies inside the chat window */
-#qr-bar{display:flex;gap:8px;overflow-x:auto;padding:8px 12px 2px;white-space:nowrap;scrollbar-width:thin}
+/* Keep the chat window from stretching sideways */
+.chat-window{overflow:hidden;line-height:1.4}
+.chat-layout{min-width:0;max-width:100%;overflow-x:hidden}
+.chat-window .chat-header h1{font-size:20px;line-height:1.2;margin:0 0 4px}
+.chat-window .chat-header p{font-size:14px;margin:0}
+#qr-bar{display:flex;gap:8px;width:100%;max-width:100%;min-width:0;flex:0 0 auto;overflow-x:auto;padding:8px 12px 4px;white-space:nowrap;scrollbar-width:thin}
+@media(max-width:480px){:root{--chat--window--width:calc(100vw - 24px);--chat--window--height:75vh}}
 .qr-chip{flex:0 0 auto;background:#fff;border:1.5px solid var(--brand);color:var(--brand);border-radius:999px;padding:7px 14px;font:500 14px "DM Sans",sans-serif;cursor:pointer}
 .qr-chip:hover{background:var(--brand);color:#fff}
 </style>
